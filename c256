@@ -1,0 +1,10 @@
+#!/usr/bin/python
+
+columns = 20
+rows = (256 - 16) // columns
+
+for i in range(rows):
+    row = []
+    for j in range(columns):
+        row.append("[38;5;{0}m{0} ".format(16 + rows*j + i))
+    print(''.join(row))

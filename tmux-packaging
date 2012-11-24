@@ -1,0 +1,12 @@
+#!/bin/bash
+
+sn=packaging
+
+cd ~/w/packages
+tmux new-session -s $sn -d
+
+cd /tmp/makepkg
+tmux splitw -t $sn
+tmux splitw -t $sn -h
+
+tmux attach-session -t $sn
