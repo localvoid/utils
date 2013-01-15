@@ -1,3 +1,3 @@
 #!/bin/sh
 
-ragel -V $1 | dot -Tsvg > $1.svg
+[ -f $1 ] && ragel -V $1 | dot -Tsvg > $1.svg
