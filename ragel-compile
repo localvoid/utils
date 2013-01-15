@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ragel -G2 $1 -o ${file%.rl}.cpp
