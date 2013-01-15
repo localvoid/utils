@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+
+PACKAGES=$(rpmspec -q --queryformat="%{name},%{version}\n" ./pkg.spec)
+DATA=(${PACKAGES[0]//,/ })
+
+PKG_NAME=${DATA[0]}
+PKG_VERSION=${DATA[1]}
+
+git archive --format=tar --prefix=$PKG_NAME-$PKG_VERSION/ HEAD | xz > $PKG_NAME-$PKG_VERSION.tar.xz

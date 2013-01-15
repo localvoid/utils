@@ -1,0 +1,3 @@
+#!/bin/sh
+
+rpm --scripts -qp pkg.spec
