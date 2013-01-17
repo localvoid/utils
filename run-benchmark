@@ -1,0 +1,5 @@
+#!/bin/sh
+
+sudo cpupower frequency-set -g performance
+$1
+sudo cpupower frequency-set -g ondemand
